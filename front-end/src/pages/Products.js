@@ -143,12 +143,6 @@ class Products extends React.Component {
                   data-testid={ `customer_products__img-card-bg-image-${index + 1}` }
                   className="img-products"
                 />
-                <p
-                  data-testid={ `customer_products__element-card-price-${index + 1}` }
-                  className="price-products"
-                >
-                  { `R$ ${String(product.price).replace('.', ',')}` }
-                </p>
               </div>
               <div className="paiInputs">
                 <p
@@ -156,6 +150,12 @@ class Products extends React.Component {
                   className="name-products"
                 >
                   { product.name }
+                </p>
+                <p
+                  data-testid={ `customer_products__element-card-price-${index + 1}` }
+                  className="price-products"
+                >
+                  { `R$ ${String(product.price).replace('.', ',')}` }
                 </p>
                 <div className="inputPrice-products">
                   <button

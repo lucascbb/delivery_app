@@ -8,16 +8,22 @@
     text-align: center;
   }
 
+  .paiCards-products {
+    background-color: rgb(244, 244, 244);
+    padding: 20px 0;
+  }
+
   .avoProduto-products {
     align-items: center;
     background-color: rgb(167, 167, 167);
     border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(82, 82, 82, 0.609);
     display: flex;
-    flex-direction: column;
+    height: 90px;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 0;
-    width: 250px;
+    width: 90%;
   }
 
   .paiImgPrice-products {
@@ -27,36 +33,45 @@
   }
 
   .img-products {
+    border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 250px;
-    width: 250px;
+    height: 90px;
+    width: 90px;
   }
 
   .price-products {
     color: black;
     font-family: Arial , Helvetica , sans-serif;
+    font-size: 14px;
     font-weight: 900;
-    margin: 10px 170px 0 0;
-    position: absolute;
     text-align: center;
   }
 
   .name-products {
+    -webkit-box-orient: vertical;
+
+    /* stylelint-disable-next-line value-no-vendor-prefix */
+    display: -webkit-box;
     font-family: Arial , Helvetica , sans-serif;
+    font-size: 14px;
     font-weight: 600;
+    -webkit-line-clamp: 2;
     margin: 15px 0 5px;
+    overflow: hidden;
     text-align: center;
+    width: 180px;
   }
 
   .paiInputs {
     align-items: center;
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
   }
 
   .inputPrice-products {
-    margin: 5px 0 15px;
+    margin-bottom: 8px;
+    padding: 10px;
   }
 
   .moreBtn-products {
@@ -90,23 +105,23 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    padding: 0 0 60px;
   }
 
   .checkoutBtn-products {
     background-color: var(--segunda);
     border: none;
     border-radius: 10px;
-    box-shadow: 2px 2px 4px rgb(78, 78, 78);
+    box-shadow: 2px 2px 4px rgb(55, 55, 55);
     font-family: Arial , Helvetica , sans-serif;
     font-weight: 900;
     height: 50px;
-    margin: 0 0 30px;
+    margin: 20px 0;
     padding: 12px 30px;
     text-overflow: hidden;
-    width: 250px;
+    width: 80%;
   }
 }
-
 
 @media ( min-width : 480px ) and ( max-width : 600px ) {
 
@@ -118,16 +133,22 @@
     text-align: center;
   }
 
+  .paiCards-products {
+    background-color: rgb(244, 244, 244);
+    padding: 20px 0;
+  }
+
   .avoProduto-products {
     align-items: center;
     background-color: rgb(167, 167, 167);
     border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(82, 82, 82, 0.609);
     display: flex;
-    flex-direction: column;
+    height: 90px;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 0;
-    width: 250px;
+    width: 90%;
   }
 
   .paiImgPrice-products {
@@ -137,36 +158,45 @@
   }
 
   .img-products {
+    border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 250px;
-    width: 250px;
+    height: 90px;
+    width: 90px;
   }
 
   .price-products {
     color: black;
     font-family: Arial , Helvetica , sans-serif;
+    font-size: 14px;
     font-weight: 900;
-    margin: 10px 170px 0 0;
-    position: absolute;
     text-align: center;
   }
 
   .name-products {
+    -webkit-box-orient: vertical;
+
+    /* stylelint-disable-next-line value-no-vendor-prefix */
+    display: -webkit-box;
     font-family: Arial , Helvetica , sans-serif;
+    font-size: 14px;
     font-weight: 600;
+    -webkit-line-clamp: 2;
     margin: 15px 0 5px;
+    overflow: hidden;
     text-align: center;
+    width: 180px;
   }
 
   .paiInputs {
     align-items: center;
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
   }
 
   .inputPrice-products {
-    margin: 5px 0 15px;
+    margin-bottom: 8px;
+    padding: 10px;
   }
 
   .moreBtn-products {
@@ -200,31 +230,34 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    padding: 0 0 60px;
   }
 
   .checkoutBtn-products {
     background-color: var(--segunda);
     border: none;
     border-radius: 10px;
-    box-shadow: 2px 2px 4px rgb(78, 78, 78);
+    box-shadow: 2px 2px 4px rgb(55, 55, 55);
     font-family: Arial , Helvetica , sans-serif;
     font-weight: 900;
     height: 50px;
-    margin: 0 0 30px;
+    margin: 20px 0;
     padding: 12px 30px;
     text-overflow: hidden;
-    width: 250px;
+    width: 80%;
   }
 }
-
 
 @media ( min-width : 601px ) and ( max-width : 800px ) {
 
   .paiCards-products {
     align-items: center;
+    background-color: rgb(244, 244, 244);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 30px 0;
+    padding: 20px 0;
   }
 
   .title-products {
@@ -233,6 +266,7 @@
     font-weight: 900;
     margin: 20px 0;
     text-align: center;
+    visibility: hidden;
   }
 
   .avoProduto-products {
@@ -263,18 +297,22 @@
 
   .price-products {
     color: black;
-    font-family: Arial , Helvetica , sans-serif;
     font-weight: 900;
-    margin: 10px 170px 0 0;
-    position: absolute;
     text-align: center;
   }
 
   .name-products {
-    font-family: Arial , Helvetica , sans-serif;
+    -webkit-box-orient: vertical;
+
+    /* stylelint-disable-next-line value-no-vendor-prefix */
+    display: -webkit-box;
+    font-size: 14px;
     font-weight: 600;
+    -webkit-line-clamp: 2;
     margin: 15px 0 5px;
+    overflow: hidden;
     text-align: center;
+    width: 180px;
   }
 
   .paiInputs {
@@ -331,24 +369,20 @@
     margin: 0 0 30px;
     padding: 12px 30px;
     text-overflow: hidden;
-    width: 250px;
+    width: 80%;
   }
 }
-
 
 @media ( min-width : 801px ) {
 
   .paiCards-products {
     align-items: center;
-    background-color: white;
-    border-radius: 12px;
+    background-color: rgb(244, 244, 244);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: auto;
-    margin-bottom: 20px;
-    max-width: 90%;
-    padding: 20px 30px 10px 0;
+    margin: 30px 0;
+    padding: 20px 0;
   }
 
   .title-products {
@@ -363,7 +397,6 @@
     align-items: center;
     background-color: rgb(167, 167, 167);
     border-radius: 10px;
-    box-shadow: 2px 2px 4px rgb(73, 73, 73);
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -388,18 +421,22 @@
 
   .price-products {
     color: black;
-    font-family: Arial , Helvetica , sans-serif;
     font-weight: 900;
-    margin: 10px 170px 0 0;
-    position: absolute;
     text-align: center;
   }
 
   .name-products {
-    font-family: Arial , Helvetica , sans-serif;
+    -webkit-box-orient: vertical;
+
+    /* stylelint-disable-next-line value-no-vendor-prefix */
+    display: -webkit-box;
+    font-size: 14px;
     font-weight: 600;
+    -webkit-line-clamp: 2;
     margin: 15px 0 5px;
+    overflow: hidden;
     text-align: center;
+    width: 180px;
   }
 
   .paiInputs {
@@ -417,7 +454,6 @@
     border: none;
     border-bottom-left-radius: 12px;
     border-top-left-radius: 12px;
-    cursor: pointer;
     font-family: Arial , Helvetica , sans-serif;
     font-weight: 900;
     padding: 5px 10px;
@@ -428,7 +464,6 @@
     border: none;
     border-bottom-right-radius: 12px;
     border-top-right-radius: 12px;
-    cursor: pointer;
     font-family: Arial , Helvetica , sans-serif;
     font-weight: 900;
     padding: 5px 10px;
@@ -452,17 +487,12 @@
     border: none;
     border-radius: 10px;
     box-shadow: 2px 2px 4px rgb(78, 78, 78);
-    cursor: pointer;
     font-family: Arial , Helvetica , sans-serif;
     font-weight: 900;
     height: 50px;
     margin: 0 0 30px;
     padding: 12px 30px;
     text-overflow: hidden;
-    width: 250px;
-  }
-
-  .checkoutBtn-products:hover {
-    scale: 1.02;
+    width: 80%;
   }
 }
