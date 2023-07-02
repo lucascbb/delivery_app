@@ -199,7 +199,7 @@ class Products extends React.Component {
             onClick={ () => history.push('/customer/checkout') }
             className="checkoutBtn-products"
           >
-            Ver Carrinho: R$
+            VER CARRINHO: R$
             {' '}
             <span
               data-testid="customer_products__checkout-bottom-value"

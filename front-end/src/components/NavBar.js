@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { FaWineBottle } from 'react-icons/fa';
 import { HiShoppingCart } from 'react-icons/hi';
+import { RiAdminFill } from 'react-icons/ri';
 import { TbLogout } from 'react-icons/tb';
 import '../styles/navBar.css';
 
@@ -68,6 +69,7 @@ class NavBar extends React.Component {
                   data-testid="customer_products__element-navbar-link-orders"
                   className="linkAdmin"
                 >
+                  <RiAdminFill className="iconProdutos" />
                   <p>
                     Admin Page
                   </p>
