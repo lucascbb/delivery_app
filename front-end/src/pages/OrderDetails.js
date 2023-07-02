@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import Navbar from '../components/SellerOrders/Navbar';
+import Navbar from '../components/NavBar';
 import { requestGet } from '../services/request';
 
 class OrderDetails extends Component {
@@ -31,7 +31,7 @@ class OrderDetails extends Component {
     return (
       <main>
         <section className="nav-bar">
-          <Navbar> Navbar </Navbar>
+          <Navbar />
           <h1>OrderDetails</h1>
         </section>
 

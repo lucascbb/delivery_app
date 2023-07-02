@@ -2,11 +2,54 @@
 
   nav {
     align-items: center;
-    background-color: var(--segunda);
+    background-color: white;
+    bottom: 0;
     display: flex;
-    height: 30px;
+    height: 50px;
     justify-content: space-between;
+    position: fixed;
     width: 100%;
+    z-index: 3;
+  }
+
+  .nav-link {
+    align-items: center;
+    display: flex;
+  }
+
+  .linkProdutos, .linkPedidos, .linkAdmin, .linkSair {
+    align-items: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+
+  .linkSair {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+
+  .iconProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .iconSairProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
   }
 
   .paiLinks-nav {
@@ -17,208 +60,337 @@
     margin: 0 2px;
   }
 
-  .nav-link:nth-child( 1 ) {
-    border-right: 1px solid black;
-    font-family: Arial , Helvetica , sans-serif;
-    height: 100%;
-    margin-left: -2px;
-    padding: 0 5px;
-  }
-
-  .nav-link:nth-child( 2 ) {
-    font-family: Arial , Helvetica , sans-serif;
-    height: 100%;
-    margin: 0 2px 0 0;
-    padding: 0 5px;
-  }
-
-  .link {
-    color: black;
-    margin: 7px 0;
-    text-decoration: none;
-    text-overflow: hidden;
-  }
-
   .paiSair-nav {
     align-items: center;
-    background-color: rgb(197, 50, 50);
     display: flex;
     height: 100%;
-    padding: 0 5px;
-  }
-
-  .link-sair {
-    color: black;
-    font-family: Arial , Helvetica , sans-serif;
-    margin: auto;
-    padding: 0 5px;
-    text-align: center;
+    justify-content: center;
+    padding: 0 10px;
   }
 }
-
 
 @media ( min-width : 480px ) and ( max-width : 600px ) {
 
   nav {
     align-items: center;
-    background-color: var(--segunda);
+    background-color: white;
+    border-top: 0.5px solid rgb(224, 224, 224);
+    bottom: 0;
     display: flex;
-    height: 30px;
+    height: 50px;
     justify-content: space-between;
+    position: fixed;
     width: 100%;
+    z-index: 3;
+  }
+
+  .nav-link {
+    align-items: center;
+    display: flex;
+  }
+
+  .linkProdutos, .linkPedidos, .linkAdmin, .linkSair {
+    align-items: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+
+  .linkSair {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+
+  .iconProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .paiName-nav p {
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .iconSairProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
   }
 
   .paiLinks-nav {
     align-items: center;
     display: flex;
-    font-family: Arial , Helvetica , sans-serif;
     height: 100%;
     margin: 0 2px;
-  }
-
-  .nav-link:nth-child( 1 ) {
-    border-right: 1px solid black;
-    font-family: Arial , Helvetica , sans-serif;
-    height: 100%;
-    margin-left: -2px;
-    padding: 0 5px;
-  }
-
-  .nav-link:nth-child( 2 ) {
-    font-family: Arial , Helvetica , sans-serif;
-    height: 100%;
-    margin: 0 2px 0 0;
-    padding: 0 5px;
-  }
-
-  .link {
-    color: black;
-    margin: 7px 0;
-    text-decoration: none;
+    padding: 0 10px;
   }
 
   .paiSair-nav {
     align-items: center;
-    background-color: rgb(197, 50, 50);
     display: flex;
     height: 100%;
-    padding: 0 5px;
-  }
-
-  .link-sair {
-    color: black;
-    font-family: Arial , Helvetica , sans-serif;
-    margin: auto;
-    padding: 0 5px;
-    text-align: center;
+    justify-content: center;
+    padding: 0 20px;
   }
 }
-
 
 @media ( min-width : 601px ) and ( max-width : 800px ) {
 
   nav {
     align-items: center;
-    background-color: var(--segunda);
+    background-color: rgb(244, 244, 244);
+    border-radius: 6px;
+    box-shadow: 4px 4px 10px rgba(68, 68, 68, 0.783);
     display: flex;
     height: 50px;
     justify-content: space-between;
-    width: 100%;
+    left: 50%;
+    position: fixed;
+    top: 40px;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    z-index: 3;
+  }
+
+  .nav-link {
+    align-items: center;
+    display: flex;
+  }
+
+  .linkProdutos, .linkPedidos, .linkAdmin, .linkSair {
+    align-items: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+
+  .linkSair {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+
+  .iconProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .paiName-nav p {
+    font-size: 18px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 300px;
+  }
+
+  .iconSairProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
   }
 
   .paiLinks-nav {
     align-items: center;
     display: flex;
-    font-family: Arial , Helvetica , sans-serif;
-  }
-
-  .nav-link:nth-child( 1 ) {
-    font-family: Arial , Helvetica , sans-serif;
     height: 100%;
-    margin-left: 10px;
-    padding: 0 5px;
-  }
-
-  .nav-link:nth-child( 2 ) {
-    font-family: Arial , Helvetica , sans-serif;
-    height: 100%;
-    margin: 0 2px 0 0;
-    padding: 0 5px;
-  }
-
-  .link {
-    color: black;
-    margin: 7px 0;
-    text-decoration: none;
+    margin: 0 2px;
+    padding: 0 10px;
   }
 
   .paiSair-nav {
     align-items: center;
-    background-color: rgb(197, 50, 50);
     display: flex;
     height: 100%;
-    padding: 0 18px;
-  }
-
-  .link-sair {
-    color: black;
-    font-family: Arial , Helvetica , sans-serif;
-    margin: auto;
-    padding: 0 5px;
-    text-align: center;
+    justify-content: center;
+    padding: 0 20px;
   }
 }
 
+@media ( min-width : 801px ) and ( max-width : 1000px ) {
 
-@media ( min-width : 801px ) {
+  nav {
+    align-items: center;
+    background-color: rgb(244, 244, 244);
+    border-radius: 6px;
+    box-shadow: 4px 4px 10px rgba(68, 68, 68, 0.783);
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    left: 50%;
+    position: fixed;
+    top: 40px;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    z-index: 3;
+  }
+
+  .nav-link {
+    align-items: center;
+    display: flex;
+  }
+
+  .linkProdutos, .linkPedidos, .linkAdmin, .linkSair {
+    align-items: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+
+  .linkSair {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+
+  .iconProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .paiName-nav p {
+    font-size: 18px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 400px;
+  }
+
+  .iconSairProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .paiLinks-nav {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    margin: 0 2px;
+    padding: 0 10px;
+  }
+
+  .paiSair-nav {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    padding: 0 20px;
+  }
+}
+
+@media ( min-width : 1001px ) {
 
   nav {
     align-items: center;
     background-color: var(--segunda);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
     display: flex;
     height: 60px;
     justify-content: space-between;
     width: 100%;
   }
 
+  .nav-link {
+    align-items: center;
+    display: flex;
+  }
+
+  .linkProdutos, .linkPedidos, .linkAdmin, .linkSair {
+    align-items: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 20px;
+    text-decoration: none;
+  }
+
+  .linkSair {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+
+  .iconProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .paiName-nav p {
+    font-size: 18px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 500px;
+  }
+
+  .iconSairProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
   .paiLinks-nav {
     align-items: center;
     display: flex;
-    font-family: Arial , Helvetica , sans-serif;
-  }
-
-  .nav-link:nth-child( 1 ) {
-    font-family: Arial , Helvetica , sans-serif;
     height: 100%;
-    margin-left: 10px;
-    padding: 0 5px;
-  }
-
-  .nav-link:nth-child( 2 ) {
-    font-family: Arial , Helvetica , sans-serif;
-    height: 100%;
-    margin: 0 2px 0 0;
-    padding: 0 5px;
-  }
-
-  .link {
-    color: black;
-    margin: 7px 0;
-    text-decoration: none;
+    margin: 0 2px;
+    padding: 0 10px;
   }
 
   .paiSair-nav {
     align-items: center;
     display: flex;
     height: 100%;
-    padding: 0 18px;
-  }
-
-  .link-sair {
-    color: black;
-    font-family: Arial , Helvetica , sans-serif;
-    margin: auto;
-    padding: 0 5px;
-    text-align: center;
+    justify-content: center;
+    padding: 0 20px;
   }
 }

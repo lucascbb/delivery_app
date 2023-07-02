@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { requestGet, requestPut } from '../services/request';
-import Navbar from '../components/SellerOrders/Navbar';
+import Navbar from '../components/NavBar';
 
 class SaleDetails extends React.Component {
   constructor() {

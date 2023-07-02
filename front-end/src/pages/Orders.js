@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { requestGet, requestPut } from '../services/request';
-import NavbarUser from '../components/NavbarUser';
+import Navbar from '../components/NavBar';
+// import { sale } from '../../../back-end/src/database/controller';
 
 class Orders extends React.Component {
   constructor() {
@@ -20,24 +21,33 @@ class Orders extends React.Component {
 
   getSale = async () => {
     const { location: { pathname } } = this.props;
-    const saleId = pathname[pathname.length - 1];
+    const last = pathname.split('/');
+    const saleId = last[last.length - 1];
+
     const sale = await requestGet(`/seller/${saleId}`);
+
     const newDate = this.formatDate(sale.saleDate);
     this.setState({
       sale: { ...sale, saleDate: (await newDate).toString() },
       status: sale.status,
       button: sale.status !== 'Em Trânsito',
     });
+    if (sale.products.length === 0) {
+      window.location.reload();
+    }
   };
 
   formatDate = async (date) => {
     const dateFormat = new Date(date);
     const ten = 10;
+    const day = dateFormat.getDate() < ten
+      ? (`0${dateFormat.getDate()}`) : dateFormat.getDate();
+    const month = (dateFormat.getMonth() + 1).toString().padStart(2, '0');
     const year = dateFormat.getFullYear();
-    const day = dateFormat.getDate();
-    const wrorngFormatMonth = dateFormat.getMonth() + 1;
-    const month = wrorngFormatMonth >= ten ? wrorngFormatMonth : `0${wrorngFormatMonth}`;
-    return `${day}/${month}/${year}`;
+    const hours = dateFormat.getHours().toString().padStart(2, '0');
+    const minutes = dateFormat.getMinutes().toString().padStart(2, '0');
+    const seconds = dateFormat.getSeconds().toString().padStart(2, '0');
+    return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
   };
 
   checkSale = async () => {
@@ -64,33 +74,32 @@ class Orders extends React.Component {
     return (
       sale.products ? (
         <>
-          <NavbarUser />
+          <Navbar />
           <h1>Detalhe do pedido</h1>
           <div>
             <div>
               <p
                 data-testid={ `${dataTest}details-label-order-id` }
               >
-                PEDIDO
-                {' '}
-                { sale.id }
+                { `Pedido: ${sale.id}` }
               </p>
               <p
                 data-testid={ `${dataTest}details-label-seller-name` }
               >
-                P.Vendedora:
-                {' '}
-                { sale.seller.name }
+                { `Vendedor: ${sale.seller.name}` }
               </p>
               <p
                 data-testid={ `${dataTest}details-label-order-date` }
               >
-                { sale.saleDate }
+                { `${sale.saleDate}` }
               </p>
               <p
                 data-testid={ `${dataTest}details-label-delivery-status${sale.id}` }
               >
                 { status }
+              </p>
+              <p>
+                { `Endereço: ${sale.deliveryAddress}, ${sale.deliveryNumber}` }
               </p>
               <button
                 data-testid="customer_order_details__button-delivery-check"
@@ -102,11 +111,11 @@ class Orders extends React.Component {
               </button>
             </div>
             { sale.products ? sale.products.map((a, index) => (
-              <>
+              <div key={ index }>
                 <p
                   data-testid={ `${dataTest}table-item-number-${index}` }
                 >
-                  { index + 1 }
+                  { `${index + 1} -` }
                 </p>
                 <p
                   data-testid={ `${dataTest}table-name-${index}` }
@@ -116,29 +125,30 @@ class Orders extends React.Component {
                 <p
                   data-testid={ `${dataTest}table-quantity-${index}` }
                 >
-                  { a.quantity }
+                  { `Quantidade: ${a.SalesProduct.quantity}` }
                 </p>
                 <p
                   data-testid={ `${dataTest}table-sub-total-${index}` }
                 >
-                  { a.price }
+                  { `Preço unitário: ${a.price}` }
                 </p>
                 <p
                   data-testid={ `${dataTest}table-unit-price-${index}` }
                 >
                   {
-                    (Number(a.SalesProduct.quantity) * Number(a.price)).toFixed(2)
+                    `Preço total: ${(Number(a.SalesProduct.quantity)
+                      * Number(a.price)).toFixed(2)}`
                   }
                 </p>
-              </>
+              </div>
             )) : <p> Loading </p> }
             <p
               data-testid={ `${dataTest}total-price` }
             >
-              Total: R$
-              <spna>
+              Valor Total do pedido: R$
+              <span>
                 { sale.totalPrice.replace('.', ',') }
-              </spna>
+              </span>
             </p>
           </div>
         </>

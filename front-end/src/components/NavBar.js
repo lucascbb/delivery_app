@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { FaWineBottle } from 'react-icons/fa';
+import { HiShoppingCart } from 'react-icons/hi';
+import { TbLogout } from 'react-icons/tb';
 import '../styles/navBar.css';
 
 class NavBar extends React.Component {
@@ -26,32 +29,51 @@ class NavBar extends React.Component {
             <Link
               to="/customer/products"
               data-testid="customer_products__element-navbar-link-products"
-              className="link"
+              className="linkProdutos"
             >
-              <p className="link">Produtos</p>
+              <FaWineBottle className="iconProdutos" />
+              <p>Produtos</p>
             </Link>
-          </div>
-          <div className="nav-link">
-            <Link
-              to="/customer/orders"
-              data-testid="customer_products__element-navbar-link-orders"
-              className="link"
-            >
-              <p className="link">Meus pedidos</p>
-            </Link>
-          </div>
-          {role === 'administrator'
-            ? (
-              <div className="nav-link">
+            {role === 'seller'
+              ? (
+                <Link
+                  to="/seller/orders"
+                  className="linkPedidos"
+                >
+                  <HiShoppingCart className="iconProdutos" />
+                  <p
+                    data-testid="customer_products__element-navbar-link-orders"
+                  >
+                    Pedidos
+                  </p>
+                </Link>
+              ) : null}
+            {role === 'customer'
+              ? (
+                <Link
+                  to="/customer/orders"
+                  data-testid="customer_products__element-navbar-link-orders"
+                  className="linkPedidos"
+                >
+                  <HiShoppingCart className="iconProdutos" />
+                  <p>
+                    Pedidos
+                  </p>
+                </Link>
+              ) : null}
+            {role === 'administrator'
+              ? (
                 <Link
                   to="/admin/manage"
                   data-testid="customer_products__element-navbar-link-orders"
-                  className="link"
+                  className="linkAdmin"
                 >
-                  <p className="link">Admin Page</p>
+                  <p>
+                    Admin Page
+                  </p>
                 </Link>
-              </div>
-            ) : null}
+              ) : null}
+          </div>
         </div>
         <div className="paiName-nav">
           <p
@@ -65,9 +87,10 @@ class NavBar extends React.Component {
             data-testid="customer_products__element-navbar-link-logout"
             onClick={ () => localStorage.clear() }
             to="/login"
-            className="link"
+            className="linkSair"
           >
-            <p className="link-sair">Sair</p>
+            <TbLogout className="iconSairProdutos" />
+            <p>Sair</p>
           </Link>
         </div>
       </nav>

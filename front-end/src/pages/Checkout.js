@@ -16,7 +16,7 @@ class Checkout extends React.Component {
       sellers: [],
       details: {
         userId: 0,
-        sellerId: 2,
+        sellerId: 1,
         address: '',
         addressNumber: '',
       },
@@ -37,8 +37,10 @@ class Checkout extends React.Component {
       a.name === thisUser.name
     ));
 
-    this.handleComponent([{ name: 'sellers', value: users },
-      { name: 'details', value: { ...details, userId: userId.id } }]);
+    this.handleComponent([{
+      name: 'sellers',
+      value: users.filter((e) => e.role === 'seller') },
+    { name: 'details', value: { ...details, userId: userId.id } }]);
   };
 
   getShoppingCart = () => {
@@ -75,7 +77,7 @@ class Checkout extends React.Component {
       id: response.id,
       products,
     };
-    console.log(secondBody);
+
     await requestPost('/sale', secondBody);
 
     history.push(`/customer/orders/${response.id}`);
@@ -129,7 +131,7 @@ class Checkout extends React.Component {
                 name="seller"
                 data-testid="customer_checkout__select-seller"
                 value={ details.sellerId }
-                onChange={ (e) => this.handleChange('seller', e.target.value) }
+                onChange={ (e) => this.handleChange('sellerId', Number(e.target.value)) }
                 className="inputRole-admin"
               >
                 {sellers.map((user) => (

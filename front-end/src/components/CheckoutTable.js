@@ -100,11 +100,12 @@ class CheckoutTable extends React.Component {
 }
 
 CheckoutTable.propTypes = {
-  shoppingCart: PropTypes.shape({
-    map: PropTypes.func,
-    find: PropTypes.func,
-    filter: PropTypes.func,
-  }).isRequired,
+  shoppingCart: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    price: PropTypes.string,
+    quantity: PropTypes.number,
+  })).isRequired,
   shoppingCartValue: PropTypes.number.isRequired,
   handleComponent: PropTypes.func.isRequired,
 };

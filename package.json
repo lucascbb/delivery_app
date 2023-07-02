@@ -31,6 +31,8 @@
   },
   "homepage": "https://github.com/betrybe/sd-0x-project-delivery-app#readme",
   "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
     "@faker-js/faker": "6.0.0",
     "axios": "0.26.1",
     "dotenv": "16.0.0",
