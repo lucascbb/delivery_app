@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { TbShoppingCartOff } from 'react-icons/tb';
 import Navbar from '../components/NavBar';
 import OrderCard from '../components/SellerOrders/OrderCard';
 import { requestGet } from '../services/request';
@@ -34,27 +35,34 @@ class SellerOrders extends Component {
     const { ordersArray } = this.state;
 
     return (
-      <main>
-        <section className="nav-bar">
-          <Navbar />
-        </section>
-        { ordersArray.length > 0 ? ordersArray.map((order, key) => (
-          <button
-            type="button"
-            key={ key }
-            onClick={ () => this.handleClickOrder(order.id) }
-          >
-            <OrderCard
+      <>
+        <Navbar />
+        <section className="main-sellerOrder">
+          { ordersArray.length > 0 ? ordersArray.map((order, key) => (
+            <button
+              type="button"
               key={ key }
-              orderNum={ order.id }
-              status={ order.status }
-              saleDate={ order.saleDate }
-              totalPrice={ order.totalPrice }
-              deliveryAddress={ order.deliveryAddress }
-            />
-          </button>
-        )) : <h3>Sem pedidos ainda</h3>}
-      </main>
+              className="btn-sellerOrder"
+              onClick={ () => this.handleClickOrder(order.id) }
+            >
+              <OrderCard
+                key={ key }
+                orderNum={ order.id }
+                status={ order.status }
+                saleDate={ order.saleDate }
+                totalPrice={ order.totalPrice }
+                deliveryAddress={ order.deliveryAddress }
+              />
+            </button>
+          ))
+            : (
+              <article className="noProduct-sellerOrder">
+                <TbShoppingCartOff className="icon-sellerOrder" />
+                <h3>Sem pedidos ainda</h3>
+              </article>
+            )}
+        </section>
+      </>
     );
   }
 }

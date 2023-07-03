@@ -221,14 +221,16 @@
     height: 100%;
     margin: 0 2px;
     padding: 0 10px;
+    width: 300px;
   }
 
   .paiSair-nav {
     align-items: center;
     display: flex;
     height: 100%;
-    justify-content: center;
+    justify-content: right;
     padding: 0 20px;
+    width: 300px;
   }
 }
 
@@ -305,14 +307,16 @@
     height: 100%;
     margin: 0 2px;
     padding: 0 10px;
+    width: 300px;
   }
 
   .paiSair-nav {
     align-items: center;
     display: flex;
     height: 100%;
-    justify-content: center;
+    justify-content: right;
     padding: 0 20px;
+    width: 300px;
   }
 }
 
@@ -384,13 +388,15 @@
     height: 100%;
     margin: 0 2px;
     padding: 0 10px;
+    width: 300px;
   }
 
   .paiSair-nav {
     align-items: center;
     display: flex;
     height: 100%;
-    justify-content: center;
+    justify-content: right;
     padding: 0 20px;
+    width: 300px;
   }
 }
