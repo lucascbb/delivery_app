@@ -18,7 +18,10 @@ class SellerOrders extends Component {
     const response = await requestGet('seller/orders');
 
     const { id } = JSON.parse(localStorage.getItem('user'));
+    console.log(id);
     const arraySeller = response.filter((e) => e.sellerId === id);
+
+    console.log(response);
 
     this.setState({
       ordersArray: arraySeller,

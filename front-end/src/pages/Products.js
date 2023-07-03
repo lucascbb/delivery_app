@@ -122,6 +122,13 @@ class Products extends React.Component {
     }
   };
 
+  setDefaultValue = () => {
+    const inputs = document.getElementsByClassName('quantity-products');
+    for (let i = 0; i < inputs.length; i += 1) {
+      inputs[i].value = 0;
+    }
+  };
+
   render() {
     const { products, shoppingCartValue, shoppingCart } = this.state;
     const { history } = this.props;

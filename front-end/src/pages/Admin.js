@@ -76,7 +76,7 @@ class Admin extends React.Component {
         {
           url === '/admin/manage' && roleAtual === 'administrator'
             ? (
-              <div>
+              <div className="main-admin">
                 <h1 className="title-admin">Cadastro novo usuário</h1>
                 <div className="paiMessageError-register">
                   {!messageError

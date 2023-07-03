@@ -291,6 +291,10 @@
 
 @media ( min-width : 801px ) and ( max-width : 1000px ) {
 
+  .main-admin {
+    padding: 0 0 60px;
+  }
+
   .title-admin {
     color: white;
     margin: 20px 0;
@@ -389,6 +393,10 @@
 }
 
 @media ( min-width : 1001px ) {
+
+  .main-admin {
+    padding: 0 0 60px;
+  }
 
   .title-admin {
     color: white;

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-max-depth */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -15,8 +16,8 @@ class Checkout extends React.Component {
       shoppingCartValue: 0.00,
       sellers: [],
       details: {
-        userId: 0,
-        sellerId: 1,
+        userId: '',
+        sellerId: '',
         address: '',
         addressNumber: '',
       },
@@ -80,11 +81,13 @@ class Checkout extends React.Component {
 
     await requestPost('/sale', secondBody);
 
+    localStorage.removeItem('shoppingCart');
     history.push(`/customer/orders/${response.id}`);
   };
 
   handleChange = (key, value) => {
     const { details } = this.state;
+    console.log(details);
     this.setState({
       details: { ...details, [key]: value },
     });
@@ -134,6 +137,7 @@ class Checkout extends React.Component {
                 onChange={ (e) => this.handleChange('sellerId', Number(e.target.value)) }
                 className="inputRole-admin"
               >
+                <option value="" disabled selected>Selecione um vendedor</option>
                 {sellers.map((user) => (
                   <option
                     key={ user.name }

@@ -4,6 +4,7 @@
     background-color: rgb(251, 251, 251);
     margin: 20px 0;
     overflow-y: hidden;
+    padding: 0 0 80px;
   }
 
   .title-adminList {
@@ -25,19 +26,22 @@
     align-items: center;
     background-color: rgb(180, 13, 13);
     border: none;
-    border-radius: 12px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px rgb(98, 98, 98);
+    color: white;
     display: flex;
     flex-flow: row;
+    font-weight: 900;
     justify-content: center;
-    margin-left: 80px;
-    padding: 0 10px;
+    margin-left: 70%;
+    padding: 6px 10px;
     position: relative;
   }
 
-  .iconDelete-adminList {
-    color: rgb(1, 1, 1);
+  /* .iconDelete-adminList {
+    color: rgb(173, 19, 19);
     font-size: 30px;
-  }
+  } */
 
   .paiSearch {
     align-items: center;
@@ -145,6 +149,7 @@
     background-color: rgb(251, 251, 251);
     margin: 20px 0;
     overflow-y: hidden;
+    padding: 0 0 80px;
   }
 
   .title-adminList {
@@ -166,12 +171,15 @@
     align-items: center;
     background-color: rgb(180, 13, 13);
     border: none;
-    border-radius: 12px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px rgb(98, 98, 98);
+    color: white;
     display: flex;
     flex-flow: row;
+    font-weight: 900;
     justify-content: center;
-    margin-left: 80px;
-    padding: 0 10px;
+    margin-left: 70%;
+    padding: 6px 10px;
     position: relative;
   }
 
@@ -307,12 +315,15 @@
     align-items: center;
     background-color: rgb(180, 13, 13);
     border: none;
-    border-radius: 12px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px rgb(98, 98, 98);
+    color: white;
     display: flex;
     flex-flow: row;
+    font-weight: 900;
     justify-content: center;
-    margin-left: 80px;
-    padding: 0 10px;
+    margin-left: 80%;
+    padding: 6px 10px;
     position: relative;
   }
 
@@ -556,7 +567,7 @@
     margin-top: 40px;
     overflow-y: hidden;
     padding: 20px 30px 40px 0;
-    width: 80%;
+    width: 1400px;
   }
 
   .title-adminList {
@@ -634,7 +645,7 @@
     font-family: Arial , Helvetica , sans-serif;
     margin: auto;
     margin-top: 30px;
-    width: 85%;
+    width: 1300px;
   }
 
   table tbody tr:nth-child( even ) {
