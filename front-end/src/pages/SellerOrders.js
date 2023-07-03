@@ -52,6 +52,7 @@ class SellerOrders extends Component {
                 saleDate={ order.saleDate }
                 totalPrice={ order.totalPrice }
                 deliveryAddress={ order.deliveryAddress }
+                deliveryNumber={ order.deliveryNumber }
               />
             </button>
           ))

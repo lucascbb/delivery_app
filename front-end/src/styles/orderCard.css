@@ -1,0 +1,824 @@
+@media ( min-width : 320px ) and ( max-width : 479px ) {
+
+  .container-order-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .main-sellerOrder {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.68);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 0 80px;
+  }
+
+  .btn-sellerOrder {
+    all: unset;
+    background-color: rgb(244, 244, 244);
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px grey;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 140px;
+    margin: 10px;
+    overflow: hidden;
+    padding: 8px 0;
+    width: 85%;
+  }
+
+  .btn-sellerOrder:active {
+    background-color: rgb(229, 229, 229);
+    transform: scale(1.05);
+  }
+
+  .Pendente-lineCard {
+    animation: widthAnimation1 0.8s ease forwards;
+    background-color: rgb(255, 47, 0);
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation1 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 25%;
+    }
+  }
+
+  .Preparando-lineCard {
+    animation: widthAnimation2 0.8s ease forwards;
+    background-color: rgb(216, 168, 13);
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation2 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 50%;
+    }
+  }
+
+  .Trânsito-lineCard {
+    animation: widthAnimation3 0.8s ease forwards;
+    background-color: rgb(78, 199, 13);
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation3 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 75%;
+    }
+  }
+
+  .date-OrderCard {
+    font-style: italic;
+  }
+
+  .order-num {
+    align-items: center;
+    background-color: var(--primeira);
+    border-bottom: 1px solid rgb(99, 99, 99);
+    color: white;
+    display: flex;
+    font-weight: 900;
+    justify-content: space-between;
+    margin: -8px 0 0;
+    padding: 8px 10px;
+    width: 100%;
+  }
+
+  .icon-OrderCard {
+    margin-right: 20px;
+  }
+
+  .order-num div {
+    align-items: center;
+    display: flex;
+  }
+
+  .order-num p {
+    font-size: 18px;
+    margin: 5px 0 0 10px;
+  }
+
+  .order-num img {
+    width: 30px;
+  }
+
+  .order-details > div:nth-child( 2 ) {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px 4px;
+  }
+
+  .order-details > div:nth-child( 3 ) {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 12px;
+  }
+
+  .order-details > div:nth-child( 3 ) p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .order-details div span {
+    font-weight: 900;
+  }
+
+  .Pendente-orderCard {
+    color: rgb(255, 47, 0);
+    font-weight: 600;
+  }
+
+  .Preparando-orderCard {
+    color: rgb(216, 168, 13);
+    font-weight: 600;
+  }
+
+  .Trânsito-orderCard {
+    color: rgb(78, 199, 13);
+    font-weight: 600;
+  }
+}
+
+@media ( min-width : 480px ) and ( max-width : 600px ) {
+
+  .container-order-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .main-sellerOrder {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.68);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 0 80px;
+  }
+
+  .btn-sellerOrder {
+    all: unset;
+    background-color: rgb(244, 244, 244);
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px grey;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 140px;
+    margin: 10px;
+    overflow: hidden;
+    padding: 8px 0;
+    width: 85%;
+  }
+
+  .btn-sellerOrder:active {
+    background-color: rgb(229, 229, 229);
+    transform: scale(1.05);
+  }
+
+  .Pendente-lineCard {
+    animation: widthAnimation1 0.8s ease forwards;
+    background-color: rgb(255, 47, 0);
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation1 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 25%;
+    }
+  }
+
+  .Preparando-lineCard {
+    animation: widthAnimation2 0.8s ease forwards;
+    background-color: rgb(216, 168, 13);
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation2 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 50%;
+    }
+  }
+
+  .Trânsito-lineCard {
+    animation: widthAnimation3 0.8s ease forwards;
+    background-color: rgb(78, 199, 13);
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation3 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 75%;
+    }
+  }
+
+  .date-OrderCard {
+    font-style: italic;
+  }
+
+  .order-num {
+    align-items: center;
+    background-color: var(--primeira);
+    border-bottom: 1px solid rgb(99, 99, 99);
+    color: white;
+    display: flex;
+    font-weight: 900;
+    justify-content: space-between;
+    margin: -8px 0 0;
+    padding: 8px 10px;
+    width: 100%;
+  }
+
+  .icon-OrderCard {
+    margin-right: 20px;
+  }
+
+  .order-num div {
+    align-items: center;
+    display: flex;
+  }
+
+  .order-num p {
+    font-size: 18px;
+    margin: 5px 0 0 10px;
+  }
+
+  .order-num img {
+    width: 30px;
+  }
+
+  .order-details > div:nth-child( 2 ) {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px 4px;
+  }
+
+  .order-details > div:nth-child( 3 ) {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 12px;
+  }
+
+  .order-details > div:nth-child( 3 ) p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .order-details div span {
+    font-weight: 900;
+  }
+
+  .Pendente-orderCard {
+    color: rgb(255, 47, 0);
+    font-weight: 600;
+  }
+
+  .Preparando-orderCard {
+    color: rgb(216, 168, 13);
+    font-weight: 600;
+  }
+
+  .Trânsito-orderCard {
+    color: rgb(78, 199, 13);
+    font-weight: 600;
+  }
+}
+
+@media ( min-width : 601px ) and ( max-width : 800px ) {
+
+  .container-order-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .main-sellerOrder {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.68);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 90px 0 40px;
+  }
+
+  .btn-sellerOrder {
+    all: unset;
+    background-color: rgb(244, 244, 244);
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px grey;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 140px;
+    margin: 10px;
+    overflow: hidden;
+    padding: 8px 0;
+    width: 400px;
+  }
+
+  .btn-sellerOrder:active {
+    background-color: rgb(229, 229, 229);
+    transform: scale(1.05);
+  }
+
+  .Pendente-lineCard {
+    animation: widthAnimation1 0.8s ease forwards;
+    background-color: rgb(255, 47, 0);
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation1 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 25%;
+    }
+  }
+
+  .Preparando-lineCard {
+    animation: widthAnimation2 0.8s ease forwards;
+    background-color: rgb(216, 168, 13);
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation2 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 50%;
+    }
+  }
+
+  .Trânsito-lineCard {
+    animation: widthAnimation3 0.8s ease forwards;
+    background-color: rgb(78, 199, 13);
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation3 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 75%;
+    }
+  }
+
+  .date-OrderCard {
+    font-style: italic;
+  }
+
+  .order-num {
+    align-items: center;
+    background-color: var(--primeira);
+    border-bottom: 1px solid rgb(99, 99, 99);
+    color: white;
+    display: flex;
+    font-weight: 900;
+    justify-content: space-between;
+    margin: -8px 0 0;
+    padding: 8px 10px;
+    width: 100%;
+  }
+
+  .icon-OrderCard {
+    margin-right: 20px;
+  }
+
+  .order-num div {
+    align-items: center;
+    display: flex;
+  }
+
+  .order-num p {
+    font-size: 18px;
+    margin: 5px 0 0 10px;
+  }
+
+  .order-num img {
+    width: 30px;
+  }
+
+  .order-details > div:nth-child( 2 ) {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px 4px;
+  }
+
+  .order-details > div:nth-child( 3 ) {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 12px;
+  }
+
+  .order-details > div:nth-child( 3 ) p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .order-details div span {
+    font-weight: 900;
+  }
+
+  .Pendente-orderCard {
+    color: rgb(255, 47, 0);
+    font-weight: 600;
+  }
+
+  .Preparando-orderCard {
+    color: rgb(216, 168, 13);
+    font-weight: 600;
+  }
+
+  .Trânsito-orderCard {
+    color: rgb(78, 199, 13);
+    font-weight: 600;
+  }
+}
+
+@media ( min-width : 801px ) and ( max-width : 1000px ) {
+
+  .container-order-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .main-sellerOrder {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.68);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 90px 10px 40px;
+  }
+
+  .btn-sellerOrder {
+    all: unset;
+    background-color: rgb(244, 244, 244);
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px grey;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 140px;
+    margin: 10px;
+    overflow: hidden;
+    padding: 8px 0;
+    width: 400px;
+  }
+
+  .btn-sellerOrder:active {
+    background-color: rgb(229, 229, 229);
+    transform: scale(1.05);
+  }
+
+  .Pendente-lineCard {
+    animation: widthAnimation1 0.8s ease forwards;
+    background-color: rgb(255, 47, 0);
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation1 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 25%;
+    }
+  }
+
+  .Preparando-lineCard {
+    animation: widthAnimation2 0.8s ease forwards;
+    background-color: rgb(216, 168, 13);
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation2 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 50%;
+    }
+  }
+
+  .Trânsito-lineCard {
+    animation: widthAnimation3 0.8s ease forwards;
+    background-color: rgb(78, 199, 13);
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation3 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 75%;
+    }
+  }
+
+  .date-OrderCard {
+    font-style: italic;
+  }
+
+  .order-num {
+    align-items: center;
+    background-color: var(--primeira);
+    border-bottom: 1px solid rgb(99, 99, 99);
+    color: white;
+    display: flex;
+    font-weight: 900;
+    justify-content: space-between;
+    margin: -8px 0 0;
+    padding: 8px 10px;
+    width: 100%;
+  }
+
+  .icon-OrderCard {
+    margin-right: 20px;
+  }
+
+  .order-num div {
+    align-items: center;
+    display: flex;
+  }
+
+  .order-num p {
+    font-size: 18px;
+    margin: 5px 0 0 10px;
+  }
+
+  .order-num img {
+    width: 30px;
+  }
+
+  .order-details > div:nth-child( 2 ) {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px 4px;
+  }
+
+  .order-details > div:nth-child( 3 ) {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 12px;
+  }
+
+  .order-details > div:nth-child( 3 ) p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .order-details div span {
+    font-weight: 900;
+  }
+
+  .Pendente-orderCard {
+    color: rgb(255, 47, 0);
+    font-weight: 600;
+  }
+
+  .Preparando-orderCard {
+    color: rgb(216, 168, 13);
+    font-weight: 600;
+  }
+
+  .Trânsito-orderCard {
+    color: rgb(78, 199, 13);
+    font-weight: 600;
+  }
+}
+
+@media ( min-width : 1001px ) {
+
+  .container-order-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .main-sellerOrder {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.68);
+    border-end-end-radius: 6px;
+    border-end-start-radius: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 40px 10px;
+    width: 80%;
+  }
+
+  .btn-sellerOrder {
+    all: unset;
+    background-color: rgb(244, 244, 244);
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px grey;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 140px;
+    margin: 10px;
+    overflow: hidden;
+    padding: 8px 0;
+    width: 400px;
+  }
+
+  .btn-sellerOrder:active {
+    background-color: rgb(229, 229, 229);
+    transform: scale(1.05);
+  }
+
+  .Pendente-lineCard {
+    animation: widthAnimation1 0.8s ease forwards;
+    background-color: rgb(255, 47, 0);
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation1 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 25%;
+    }
+  }
+
+  .Preparando-lineCard {
+    animation: widthAnimation2 0.8s ease forwards;
+    background-color: rgb(216, 168, 13);
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation2 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 50%;
+    }
+  }
+
+  .Trânsito-lineCard {
+    animation: widthAnimation3 0.8s ease forwards;
+    background-color: rgb(78, 199, 13);
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation3 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 75%;
+    }
+  }
+
+  .date-OrderCard {
+    font-style: italic;
+  }
+
+  .order-num {
+    align-items: center;
+    background-color: var(--primeira);
+    border-bottom: 1px solid rgb(99, 99, 99);
+    color: white;
+    display: flex;
+    font-weight: 900;
+    justify-content: space-between;
+    margin: -8px 0 0;
+    padding: 8px 10px;
+    width: 100%;
+  }
+
+  .icon-OrderCard {
+    margin-right: 20px;
+  }
+
+  .order-num div {
+    align-items: center;
+    display: flex;
+  }
+
+  .order-num p {
+    font-size: 18px;
+    margin: 5px 0 0 10px;
+  }
+
+  .order-num img {
+    width: 30px;
+  }
+
+  .order-details > div:nth-child( 2 ) {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px 4px;
+  }
+
+  .order-details > div:nth-child( 3 ) {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 12px;
+  }
+
+  .order-details > div:nth-child( 3 ) p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .order-details div span {
+    font-weight: 900;
+  }
+
+  .Pendente-orderCard {
+    color: rgb(255, 47, 0);
+    font-weight: 600;
+  }
+
+  .Preparando-orderCard {
+    color: rgb(216, 168, 13);
+    font-weight: 600;
+  }
+
+  .Trânsito-orderCard {
+    color: rgb(78, 199, 13);
+    font-weight: 600;
+  }
+}

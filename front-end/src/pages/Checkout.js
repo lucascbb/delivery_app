@@ -74,6 +74,8 @@ class Checkout extends React.Component {
     const response = await postHeader('/seller/orders', body, thisUser.token);
     const products = shoppingCart.map((p) => p);
 
+    console.log(details);
+
     const secondBody = {
       id: response.id,
       products,
@@ -178,6 +180,13 @@ class Checkout extends React.Component {
           <div className="btn-admin">
             <button
               type="button"
+              disabled={
+                details.address === ''
+                || details.addressNumber === ''
+                || details.sellerId === ''
+                || details.userId === ''
+                || shoppingCartValue === 0
+              }
               data-testid="customer_checkout__button-submit-order"
               onClick={ () => this.finish() }
               className="buttonRegister-admin"
