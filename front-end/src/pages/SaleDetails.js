@@ -1,8 +1,14 @@
+/* eslint-disable react/jsx-max-depth */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { AiOutlineAlert } from 'react-icons/ai';
+import { MdOutlineDeliveryDining } from 'react-icons/md';
+import { BiDrink } from 'react-icons/bi';
 import { requestGet, requestPut } from '../services/request';
 import Navbar from '../components/NavBar';
+import '../styles/orderDetails.css';
+import paperBag from '../images/wine-black.png';
 
 class SaleDetails extends React.Component {
   constructor() {
@@ -35,11 +41,13 @@ class SaleDetails extends React.Component {
   formatDate = async (date) => {
     const dateFormat = new Date(date);
     const ten = 10;
+    const day = dateFormat.getDate() < ten
+      ? (`0${dateFormat.getDate()}`) : dateFormat.getDate();
+    const month = (dateFormat.getMonth() + 1).toString().padStart(2, '0');
     const year = dateFormat.getFullYear();
-    const day = dateFormat.getDate();
-    const wrorngFormatMonth = dateFormat.getMonth() + 1;
-    const month = wrorngFormatMonth >= ten ? wrorngFormatMonth : `0${wrorngFormatMonth}`;
-    return `${day}/${month}/${year}`;
+    const hours = dateFormat.getHours().toString().padStart(2, '0');
+    const minutes = dateFormat.getMinutes().toString().padStart(2, '0');
+    return `${day}/${month}/${year} às ${hours}:${minutes}`;
   };
 
   checkPreparing = async () => {
@@ -86,91 +94,110 @@ class SaleDetails extends React.Component {
       sale.products ? (
         <>
           <Navbar />
-          <h1>Detalhe do pedido</h1>
-          <div>
-            <div>
-              <p
-                data-testid={ `${dataTest}details-label-order-id` }
-              >
-                PEDIDO
-                {' '}
-                { sale.id }
-              </p>
-              <p
-                data-testid={ `${dataTest}details-label-seller-name` }
-              >
-                P.Vendedora:
-                {' '}
-                { sale.seller.name }
-              </p>
-              <p
-                data-testid={ `${dataTest}details-label-order-date` }
-              >
-                { sale.saleDate }
-              </p>
-              <p
-                data-testid={ `${dataTest}details-label-delivery-status${sale.id}` }
-              >
-                { status }
-              </p>
-
-              <button
-                data-testid="seller_order_details__button-preparing-check"
-                type="button"
-                onClick={ this.checkPreparing }
-                disabled={ disablePreparing }
-              >
-                Preparar pedido
-              </button>
-              <button
-                data-testid="seller_order_details__button-dispatch-check"
-                type="button"
-                onClick={ this.checkInTransit }
-                disabled={ disableInTransit }
-              >
-                Saiu para entrega
-              </button>
-            </div>
-            { sale.products ? sale.products.map((a, index) => (
-              <>
+          <section className="container-OrderDetails">
+            <h2>Detalhes do pedido</h2>
+            <article>
+              <div className="main-OrderDetails">
+                <div>
+                  <img src={ paperBag } alt="icon paper bag" />
+                </div>
+                <div>
+                  <h3
+                    data-testid={ `${dataTest}details-label-order-id` }
+                  >
+                    PEDIDO
+                    {' '}
+                    { sale.id }
+                  </h3>
+                  <p
+                    data-testid={ `${dataTest}details-label-seller-name` }
+                    className="seller-OrderDetails"
+                  >
+                    Vendedor(a):
+                    {' '}
+                    { sale.seller.name }
+                  </p>
+                  <em
+                    data-testid={ `${dataTest}details-label-order-date` }
+                    className="date-OrderDetails"
+                  >
+                    { sale.saleDate }
+                  </em>
+                  <p
+                    data-testid={ `${dataTest}details-label-delivery-status${sale.id}` }
+                    className={ `${status}-OrderDetails` }
+                  >
+                    {status === 'Pendente'
+                    && <AiOutlineAlert className="icon1-OrderDetails" />}
+                    {status === 'Preparando'
+                    && <BiDrink className="icon2-OrderDetails" />}
+                    {status === 'Em Trânsito'
+                    && <MdOutlineDeliveryDining className="icon3-OrderDetails" />}
+                    { status }
+                  </p>
+                  <button
+                    data-testid="seller_order_details__button-preparing-check"
+                    type="button"
+                    onClick={ this.checkPreparing }
+                    className="prepareBtn"
+                    disabled={ disablePreparing }
+                  >
+                    Preparar pedido
+                  </button>
+                  <button
+                    data-testid="seller_order_details__button-dispatch-check"
+                    type="button"
+                    onClick={ this.checkInTransit }
+                    className="deliveryBtn"
+                    disabled={ disableInTransit }
+                  >
+                    Saiu para entrega
+                  </button>
+                </div>
+              </div>
+              <div className="details-OrderDetails">
+                { sale.products ? sale.products.map((a, index) => (
+                  <div key={ index }>
+                    <p
+                      data-testid={ `${dataTest}table-item-number-${index}` }
+                    >
+                      { `${index + 1} -` }
+                    </p>
+                    <p
+                      data-testid={ `${dataTest}table-name-${index}` }
+                    >
+                      { a.name }
+                    </p>
+                    <p
+                      data-testid={ `${dataTest}table-quantity-${index}` }
+                    >
+                      { a.quantity }
+                    </p>
+                    <p
+                      data-testid={ `${dataTest}table-sub-total-${index}` }
+                    >
+                      { a.price }
+                    </p>
+                    <p
+                      data-testid={ `${dataTest}table-unit-price-${index}` }
+                    >
+                      {
+                        (Number(a.SalesProduct.quantity) * Number(a.price)).toFixed(2)
+                      }
+                    </p>
+                  </div>
+                )) : <p> Loading </p> }
                 <p
-                  data-testid={ `${dataTest}table-item-number-${index}` }
+                  data-testid={ `${dataTest}total-price` }
                 >
-                  { index + 1 }
+                  Total: R$
+                  <span>
+                    { sale.totalPrice.replace('.', ',') }
+                  </span>
                 </p>
-                <p
-                  data-testid={ `${dataTest}table-name-${index}` }
-                >
-                  { a.name }
-                </p>
-                <p
-                  data-testid={ `${dataTest}table-quantity-${index}` }
-                >
-                  { a.quantity }
-                </p>
-                <p
-                  data-testid={ `${dataTest}table-sub-total-${index}` }
-                >
-                  { a.price }
-                </p>
-                <p
-                  data-testid={ `${dataTest}table-unit-price-${index}` }
-                >
-                  {
-                    (Number(a.SalesProduct.quantity) * Number(a.price)).toFixed(2)
-                  }
-                </p>
-              </>
-            )) : <p> Loading </p> }
-            <p
-              data-testid={ `${dataTest}total-price` }
-            >
-              Total: R$
-              <spna>
-                { sale.totalPrice.replace('.', ',') }
-              </spna>
-            </p>
-          </div>
+              </div>
+            </article>
+          </section>
         </>
       ) : <p> Loading </p>
     );
