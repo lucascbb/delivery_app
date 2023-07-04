@@ -33,15 +33,15 @@ class CustomerOrders extends React.Component {
   render() {
     const { ordersArray } = this.state;
     return (
-      <main className="order-main">
+      <>
         <Navbar />
-        <div className="order-all">
+        <section className="main-sellerOrder">
           { ordersArray.map((order, i) => (
             <button
               type="button"
               key={ i }
               onClick={ () => { this.handleClickOrder(order.id); } }
-              className="product-card"
+              className="btn-sellerOrder"
             >
               <UserCard
                 key={ i }
@@ -49,11 +49,13 @@ class CustomerOrders extends React.Component {
                 status={ order.status }
                 saleDate={ order.saleDate }
                 totalPrice={ order.totalPrice }
+                deliveryAddress={ order.deliveryAddress }
+                deliveryNumber={ order.deliveryNumber }
               />
             </button>
           )) }
-        </div>
-      </main>
+        </section>
+      </>
     );
   }
 }

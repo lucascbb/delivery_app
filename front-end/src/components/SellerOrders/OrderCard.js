@@ -14,7 +14,7 @@ class OrderCard extends Component {
       const year = dateFormat.getFullYear();
       const hours = dateFormat.getHours().toString().padStart(2, '0');
       const minutes = dateFormat.getMinutes().toString().padStart(2, '0');
-      return `${day}/${month}/${year} ${hours}:${minutes}`;
+      return `${day}/${month}/${year} às ${hours}:${minutes}`;
     };
 
     const formatterBrl = new Intl.NumberFormat('pt-BR', {

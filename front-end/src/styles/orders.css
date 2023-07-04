@@ -1,86 +1,402 @@
-.main-sellerOrder {
-  align-items: center;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
+@media ( min-width : 320px ) and ( max-width : 479px ) {
+
+  nav {
+    align-items: center;
+    background-color: white;
+    bottom: 0;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .nav-link {
+    align-items: center;
+    display: flex;
+  }
+
+  .linkProdutos, .linkPedidos, .linkAdmin, .linkSair {
+    align-items: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+
+  .linkSair {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+
+  .iconProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .iconSairProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .paiLinks-nav {
+    align-items: center;
+    display: flex;
+    font-family: Arial , Helvetica , sans-serif;
+    height: 100%;
+    margin: 0 2px;
+  }
+
+  .paiSair-nav {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    padding: 0 10px;
+  }
 }
 
-.noProduct-sellerOrder {
-  background-color: whitesmoke;
-  border-radius: 6px;
-  box-shadow: inset 0 0 10px rgba(96, 96, 96, 0.674);
-  font-size: 20px;
-  margin-top: 150px;
-  padding: 12px 30px;
-  text-align: center;
+@media ( min-width : 480px ) and ( max-width : 600px ) {
+
+  nav {
+    align-items: center;
+    background-color: rgb(244, 244, 244);
+    border-top: 0.5px solid rgb(224, 224, 224);
+    bottom: 0;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .nav-link {
+    align-items: center;
+    display: flex;
+  }
+
+  .linkProdutos, .linkPedidos, .linkAdmin, .linkSair {
+    align-items: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+
+  .linkSair {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+
+  .iconProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .paiName-nav p {
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .iconSairProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .paiLinks-nav {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    margin: 0 2px;
+    padding: 0 10px;
+  }
+
+  .paiSair-nav {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    padding: 0 20px;
+  }
 }
 
-.icon-sellerOrder {
-  color: rgb(99, 99, 99);
-  font-size: 30px;
+@media ( min-width : 601px ) and ( max-width : 800px ) {
+
+  nav {
+    align-items: center;
+    background-color: rgb(244, 244, 244);
+    border-radius: 6px;
+    box-shadow: 4px 4px 10px rgba(68, 68, 68, 0.783);
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    left: 50%;
+    position: fixed;
+    top: 40px;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    z-index: 3;
+  }
+
+  .nav-link {
+    align-items: center;
+    display: flex;
+  }
+
+  .linkProdutos, .linkPedidos, .linkAdmin, .linkSair {
+    align-items: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+
+  .linkSair {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+
+  .iconProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .paiName-nav p {
+    font-size: 18px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 300px;
+  }
+
+  .iconSairProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .paiLinks-nav {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    margin: 0 2px;
+    padding: 0 10px;
+    width: 300px;
+  }
+
+  .paiSair-nav {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: right;
+    padding: 0 20px;
+    width: 300px;
+  }
 }
 
-.noProduct-sellerOrder h3 {
-  color: #e5b02c;
+@media ( min-width : 801px ) and ( max-width : 1000px ) {
+
+  nav {
+    align-items: center;
+    background-color: rgb(244, 244, 244);
+    border-radius: 6px;
+    box-shadow: 4px 4px 10px rgba(68, 68, 68, 0.783);
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    left: 50%;
+    position: fixed;
+    top: 40px;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    z-index: 3;
+  }
+
+  .nav-link {
+    align-items: center;
+    display: flex;
+  }
+
+  .linkProdutos, .linkPedidos, .linkAdmin, .linkSair {
+    align-items: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+
+  .linkSair {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+
+  .iconProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .paiName-nav p {
+    font-size: 18px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 400px;
+  }
+
+  .iconSairProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .paiLinks-nav {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    margin: 0 2px;
+    padding: 0 10px;
+    width: 300px;
+  }
+
+  .paiSair-nav {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: right;
+    padding: 0 20px;
+    width: 300px;
+  }
 }
 
-.order-main {
-  background-color: #c5e2e165;
-  min-height: 100vh;
-}
+@media ( min-width : 1001px ) {
 
-.order-all {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin: auto;
-  margin-top: 20px;
-  width: 100%;
-}
+  nav {
+    align-items: center;
+    background-color: var(--segunda);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    display: flex;
+    height: 60px;
+    justify-content: space-between;
+    width: 100%;
+  }
 
-.product-card {
-  background-color: #e5e5e5ad;
-  border: none;
-  border-radius: 5px;
-  box-shadow: #32325d40 0 2px 5px -1px , #0000004d 0 1px 3px -1px;
-}
+  .nav-link {
+    align-items: center;
+    display: flex;
+  }
 
-.product-card > section {
-  align-items: center;
-  display: flex;
-}
+  .linkProdutos, .linkPedidos, .linkAdmin, .linkSair {
+    align-items: center;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 20px;
+    text-decoration: none;
+  }
 
-.product-card > section > div:nth-of-type( 1 ) {
-  font-size: 18px;
-  padding: 15px;
-}
+  .linkSair {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    height: 45px;
+    justify-content: center;
+    padding: 0 10px;
+    text-decoration: none;
+  }
 
-.Entregue, .Preparando, .Pendente {
-  border-radius: 5px;
-  color: white;
-  font-size: 20px;
-  padding: 25px;
-}
+  .iconProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
 
-.Entregue {
-  background-color: #e5b02c;
-}
+  .paiName-nav p {
+    font-size: 18px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 500px;
+  }
 
-.Preparando {
-  background-color: #66a966;
-}
+  .iconSairProdutos {
+    color: rgb(101, 101, 101);
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
 
-.Pendente {
-  background-color: #317e5b;
-}
+  .paiLinks-nav {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    margin: 0 2px;
+    padding: 0 10px;
+    width: 300px;
+  }
 
-.date-price-card {
-  font-size: 16px;
-  font-weight: 900;
-  padding: 20px;
-}
-
-.date-price-card > p:nth-of-type( 1 ) {
-  margin-bottom: 10px;
+  .paiSair-nav {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: right;
+    padding: 0 20px;
+    width: 300px;
+  }
 }

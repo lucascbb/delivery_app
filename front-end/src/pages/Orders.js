@@ -1,8 +1,14 @@
+/* eslint-disable react/jsx-max-depth */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { AiOutlineAlert } from 'react-icons/ai';
+import { MdOutlineDeliveryDining } from 'react-icons/md';
+import { BiDrink } from 'react-icons/bi';
+import { BsHouseCheck } from 'react-icons/bs';
 import { requestGet, requestPut } from '../services/request';
 import Navbar from '../components/NavBar';
+import paperBag from '../images/wine-black.png';
 // import { sale } from '../../../back-end/src/database/controller';
 
 class Orders extends React.Component {
@@ -46,8 +52,7 @@ class Orders extends React.Component {
     const year = dateFormat.getFullYear();
     const hours = dateFormat.getHours().toString().padStart(2, '0');
     const minutes = dateFormat.getMinutes().toString().padStart(2, '0');
-    const seconds = dateFormat.getSeconds().toString().padStart(2, '0');
-    return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+    return `${day}/${month}/${year} às ${hours}:${minutes}`;
   };
 
   checkSale = async () => {
@@ -75,82 +80,112 @@ class Orders extends React.Component {
       sale.products ? (
         <>
           <Navbar />
-          <h1>Detalhe do pedido</h1>
-          <div>
-            <div>
-              <p
-                data-testid={ `${dataTest}details-label-order-id` }
-              >
-                { `Pedido: ${sale.id}` }
-              </p>
-              <p
-                data-testid={ `${dataTest}details-label-seller-name` }
-              >
-                { `Vendedor: ${sale.seller.name}` }
-              </p>
-              <p
-                data-testid={ `${dataTest}details-label-order-date` }
-              >
-                { `${sale.saleDate}` }
-              </p>
-              <p
-                data-testid={ `${dataTest}details-label-delivery-status${sale.id}` }
-              >
-                { status }
-              </p>
-              <p>
-                { `Endereço: ${sale.deliveryAddress}, ${sale.deliveryNumber}` }
-              </p>
-              <button
-                data-testid="customer_order_details__button-delivery-check"
-                type="button"
-                onClick={ this.checkSale }
-                disabled={ button }
-              >
-                Marcar como entregue
-              </button>
-            </div>
-            { sale.products ? sale.products.map((a, index) => (
-              <div key={ index }>
-                <p
-                  data-testid={ `${dataTest}table-item-number-${index}` }
-                >
-                  { `${index + 1} -` }
-                </p>
-                <p
-                  data-testid={ `${dataTest}table-name-${index}` }
-                >
-                  { a.name }
-                </p>
-                <p
-                  data-testid={ `${dataTest}table-quantity-${index}` }
-                >
-                  { `Quantidade: ${a.SalesProduct.quantity}` }
-                </p>
-                <p
-                  data-testid={ `${dataTest}table-sub-total-${index}` }
-                >
-                  { `Preço unitário: ${a.price}` }
-                </p>
-                <p
-                  data-testid={ `${dataTest}table-unit-price-${index}` }
-                >
-                  {
-                    `Preço total: ${(Number(a.SalesProduct.quantity)
-                      * Number(a.price)).toFixed(2)}`
-                  }
-                </p>
+          <section className="container-OrderDetails">
+            <h2>Detalhes do pedido</h2>
+            <article>
+              <div className="main-OrderDetails">
+                <div>
+                  <img src={ paperBag } alt="icon paper bag" />
+                </div>
+                <div>
+                  <h3
+                    data-testid={ `${dataTest}details-label-order-id` }
+                  >
+                    PEDIDO
+                    {' '}
+                    { sale.id }
+                  </h3>
+                  <p
+                    data-testid={ `${dataTest}details-label-seller-name` }
+                    className="seller-OrderDetails"
+                  >
+                    Vendedor(a):
+                    {' '}
+                    { sale.seller.name }
+                  </p>
+                  <em
+                    data-testid={ `${dataTest}details-label-order-date` }
+                    className="date-OrderDetails"
+                  >
+                    { `${sale.saleDate}` }
+                  </em>
+                  <p
+                    data-testid={ `${dataTest}details-label-delivery-status${sale.id}` }
+                    className={ `${status}-OrderDetails` }
+                  >
+                    {status === 'Pendente'
+                    && <AiOutlineAlert className="icon1-OrderDetails" />}
+                    {status === 'Preparando'
+                    && <BiDrink className="icon2-OrderDetails" />}
+                    {status === 'Em Trânsito'
+                    && <MdOutlineDeliveryDining className="icon3-OrderDetails" />}
+                    {status === 'Entregue'
+                    && <BsHouseCheck className="icon3-OrderDetails" />}
+                    { status }
+                  </p>
+                  <p>
+                    { `Endereço: ${sale.deliveryAddress}, ${sale.deliveryNumber}` }
+                  </p>
+                  <button
+                    data-testid="customer_order_details__button-delivery-check"
+                    type="button"
+                    onClick={ this.checkSale }
+                    className="checkBtn"
+                    disabled={ button }
+                  >
+                    Marcar como entregue
+                  </button>
+                </div>
               </div>
-            )) : <p> Loading </p> }
-            <p
-              data-testid={ `${dataTest}total-price` }
-            >
-              Valor Total do pedido: R$
-              <span>
-                { sale.totalPrice.replace('.', ',') }
-              </span>
-            </p>
-          </div>
+              <div className="details-OrderDetails">
+                { sale.products ? sale.products.map((a, index) => (
+                  <div key={ index } className="allProducts-OrderDetails">
+                    <img src={ a.urlImage } alt="imagem do produto" />
+                    <div className="produto-OrderDetails">
+                      <p
+                        data-testid={ `${dataTest}table-item-number-${index}` }
+                      >
+                        { `${index + 1} -` }
+                      </p>
+                      <p
+                        data-testid={ `${dataTest}table-name-${index}` }
+                      >
+                        { a.name }
+                      </p>
+                      <p
+                        data-testid={ `${dataTest}table-quantity-${index}` }
+                      >
+                        <b>Quantidade: </b>
+                        { `${a.SalesProduct.quantity}` }
+                      </p>
+                      <p
+                        data-testid={ `${dataTest}table-sub-total-${index}` }
+                      >
+                        <b>Preço Unitário: </b>
+                        { `R$ ${a.price}` }
+                      </p>
+                      <p
+                        data-testid={ `${dataTest}table-unit-price-${index}` }
+                      >
+                        <b>Preço total: </b>
+                        { `R$ ${(Number(a.SalesProduct.quantity)
+                          * Number(a.price)).toFixed(2)}` }
+                      </p>
+                    </div>
+                  </div>
+                )) : <p> Loading... </p> }
+              </div>
+              <p
+                data-testid={ `${dataTest}total-price` }
+                className="total-OrderDetails"
+              >
+                Total: R$
+                <span>
+                  { sale.totalPrice.replace('.', ',') }
+                </span>
+              </p>
+            </article>
+          </section>
         </>
       ) : <p> Loading </p>
     );

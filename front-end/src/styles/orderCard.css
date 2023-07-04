@@ -37,7 +37,7 @@
 
   .Pendente-lineCard {
     animation: widthAnimation1 0.8s ease forwards;
-    background-color: rgb(255, 47, 0);
+    background-color: rgb(207, 0, 0);
     height: 3px;
     width: 0;
   }
@@ -73,7 +73,7 @@
 
   .Trânsito-lineCard {
     animation: widthAnimation3 0.8s ease forwards;
-    background-color: rgb(78, 199, 13);
+    background-color: rgb(13, 97, 199);
     height: 3px;
     width: 0;
   }
@@ -86,6 +86,24 @@
 
     100% {
       width: 75%;
+    }
+  }
+
+  .Entregue-lineCard {
+    animation: widthAnimation4 0.8s ease forwards;
+    background-color: #090;
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation4 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 100%;
     }
   }
 
@@ -147,7 +165,7 @@
   }
 
   .Pendente-orderCard {
-    color: rgb(255, 47, 0);
+    color: rgb(207, 0, 0);
     font-weight: 600;
   }
 
@@ -157,7 +175,12 @@
   }
 
   .Trânsito-orderCard {
-    color: rgb(78, 199, 13);
+    color: rgb(13, 97, 199);
+    font-weight: 600;
+  }
+
+  .Entregue-orderCard {
+    color: #090;
     font-weight: 600;
   }
 }
@@ -201,7 +224,7 @@
 
   .Pendente-lineCard {
     animation: widthAnimation1 0.8s ease forwards;
-    background-color: rgb(255, 47, 0);
+    background-color: rgb(207, 0, 0);
     height: 3px;
     width: 0;
   }
@@ -237,7 +260,7 @@
 
   .Trânsito-lineCard {
     animation: widthAnimation3 0.8s ease forwards;
-    background-color: rgb(78, 199, 13);
+    background-color: rgb(13, 97, 199);
     height: 3px;
     width: 0;
   }
@@ -252,6 +275,25 @@
       width: 75%;
     }
   }
+
+  .Entregue-lineCard {
+    animation: widthAnimation4 0.8s ease forwards;
+    background-color: #090;
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation4 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 100%;
+    }
+  }
+
 
   .date-OrderCard {
     font-style: italic;
@@ -311,7 +353,7 @@
   }
 
   .Pendente-orderCard {
-    color: rgb(255, 47, 0);
+    color: rgb(207, 0, 0);
     font-weight: 600;
   }
 
@@ -321,7 +363,12 @@
   }
 
   .Trânsito-orderCard {
-    color: rgb(78, 199, 13);
+    color: rgb(13, 97, 199);
+    font-weight: 600;
+  }
+
+  .Entregue-orderCard {
+    color: #090;
     font-weight: 600;
   }
 }
@@ -365,7 +412,7 @@
 
   .Pendente-lineCard {
     animation: widthAnimation1 0.8s ease forwards;
-    background-color: rgb(255, 47, 0);
+    background-color: rgb(207, 0, 0);
     height: 3px;
     width: 0;
   }
@@ -401,7 +448,7 @@
 
   .Trânsito-lineCard {
     animation: widthAnimation3 0.8s ease forwards;
-    background-color: rgb(78, 199, 13);
+    background-color: rgb(13, 97, 199);
     height: 3px;
     width: 0;
   }
@@ -414,6 +461,24 @@
 
     100% {
       width: 75%;
+    }
+  }
+
+  .Entregue-lineCard {
+    animation: widthAnimation4 0.8s ease forwards;
+    background-color: #090;
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation4 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 100%;
     }
   }
 
@@ -475,7 +540,7 @@
   }
 
   .Pendente-orderCard {
-    color: rgb(255, 47, 0);
+    color: rgb(207, 0, 0);
     font-weight: 600;
   }
 
@@ -485,7 +550,12 @@
   }
 
   .Trânsito-orderCard {
-    color: rgb(78, 199, 13);
+    color: rgb(13, 97, 199);
+    font-weight: 600;
+  }
+
+  .Entregue-orderCard {
+    color: #090;
     font-weight: 600;
   }
 }
@@ -529,7 +599,7 @@
 
   .Pendente-lineCard {
     animation: widthAnimation1 0.8s ease forwards;
-    background-color: rgb(255, 47, 0);
+    background-color: rgb(207, 0, 0);
     height: 3px;
     width: 0;
   }
@@ -565,7 +635,7 @@
 
   .Trânsito-lineCard {
     animation: widthAnimation3 0.8s ease forwards;
-    background-color: rgb(78, 199, 13);
+    background-color: rgb(13, 97, 199);
     height: 3px;
     width: 0;
   }
@@ -578,6 +648,24 @@
 
     100% {
       width: 75%;
+    }
+  }
+
+  .Entregue-lineCard {
+    animation: widthAnimation4 0.8s ease forwards;
+    background-color: #090;
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation4 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 100%;
     }
   }
 
@@ -639,7 +727,7 @@
   }
 
   .Pendente-orderCard {
-    color: rgb(255, 47, 0);
+    color: rgb(207, 0, 0);
     font-weight: 600;
   }
 
@@ -649,7 +737,12 @@
   }
 
   .Trânsito-orderCard {
-    color: rgb(78, 199, 13);
+    color: rgb(13, 97, 199);
+    font-weight: 600;
+  }
+
+  .Entregue-orderCard {
+    color: #090;
     font-weight: 600;
   }
 }
@@ -698,7 +791,7 @@
 
   .Pendente-lineCard {
     animation: widthAnimation1 0.8s ease forwards;
-    background-color: rgb(255, 47, 0);
+    background-color: rgb(207, 0, 0);
     height: 3px;
     width: 0;
   }
@@ -734,7 +827,7 @@
 
   .Trânsito-lineCard {
     animation: widthAnimation3 0.8s ease forwards;
-    background-color: rgb(78, 199, 13);
+    background-color: rgb(13, 97, 199);
     height: 3px;
     width: 0;
   }
@@ -747,6 +840,24 @@
 
     100% {
       width: 75%;
+    }
+  }
+
+  .Entregue-lineCard {
+    animation: widthAnimation4 0.8s ease forwards;
+    background-color: #090;
+    height: 3px;
+    width: 0;
+  }
+
+  @keyframes widthAnimation4 {
+
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 100%;
     }
   }
 
@@ -808,7 +919,7 @@
   }
 
   .Pendente-orderCard {
-    color: rgb(255, 47, 0);
+    color: rgb(207, 0, 0);
     font-weight: 600;
   }
 
@@ -818,7 +929,12 @@
   }
 
   .Trânsito-orderCard {
-    color: rgb(78, 199, 13);
+    color: rgb(13, 97, 199);
+    font-weight: 600;
+  }
+
+  .Entregue-orderCard {
+    color: #090;
     font-weight: 600;
   }
 }
