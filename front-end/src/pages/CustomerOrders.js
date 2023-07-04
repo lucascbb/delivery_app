@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { TbShoppingCartOff } from 'react-icons/tb';
 import Navbar from '../components/NavBar';
 import UserCard from '../components/UserCard';
 import { requestGet } from '../services/request';
@@ -36,24 +37,34 @@ class CustomerOrders extends React.Component {
       <>
         <Navbar />
         <section className="main-sellerOrder">
-          { ordersArray.map((order, i) => (
-            <button
-              type="button"
-              key={ i }
-              onClick={ () => { this.handleClickOrder(order.id); } }
-              className="btn-sellerOrder"
-            >
-              <UserCard
+          {ordersArray.length > 0 ? (
+            ordersArray.map((order, i) => (
+              <button
+                type="button"
                 key={ i }
-                orderNum={ order.id }
-                status={ order.status }
-                saleDate={ order.saleDate }
-                totalPrice={ order.totalPrice }
-                deliveryAddress={ order.deliveryAddress }
-                deliveryNumber={ order.deliveryNumber }
-              />
-            </button>
-          )) }
+                onClick={ () => {
+                  this.handleClickOrder(order.id);
+                } }
+                className="btn-sellerOrder"
+              >
+                <UserCard
+                  key={ i }
+                  orderNum={ order.id }
+                  status={ order.status }
+                  saleDate={ order.saleDate }
+                  totalPrice={ order.totalPrice }
+                  deliveryAddress={ order.deliveryAddress }
+                  deliveryNumber={ order.deliveryNumber }
+                />
+              </button>
+            ))
+          ) : (
+            <article className="noProduct-sellerOrder">
+              <TbShoppingCartOff className="icon-sellerOrder" />
+              <h3>Sem pedidos ainda</h3>
+            </article>
+          )}
+
         </section>
       </>
     );

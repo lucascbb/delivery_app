@@ -34,13 +34,16 @@ class Checkout extends React.Component {
     const { details } = this.state;
     const users = await requestGet('/user');
 
+    console.log(thisUser);
+    console.log(users.filter((e) => e.role === 'seller' && e.id !== thisUser.id));
+
     const userId = users.find((a) => (
       a.name === thisUser.name
     ));
 
     this.handleComponent([{
       name: 'sellers',
-      value: users.filter((e) => e.role === 'seller') },
+      value: users.filter((e) => e.role === 'seller' && e.id !== thisUser.id) },
     { name: 'details', value: { ...details, userId: userId.id } }]);
   };
 
@@ -74,8 +77,6 @@ class Checkout extends React.Component {
     const response = await postHeader('/seller/orders', body, thisUser.token);
     const products = shoppingCart.map((p) => p);
 
-    console.log(details);
-
     const secondBody = {
       id: response.id,
       products,
@@ -89,7 +90,6 @@ class Checkout extends React.Component {
 
   handleChange = (key, value) => {
     const { details } = this.state;
-    console.log(details);
     this.setState({
       details: { ...details, [key]: value },
     });
@@ -139,14 +139,15 @@ class Checkout extends React.Component {
                 onChange={ (e) => this.handleChange('sellerId', Number(e.target.value)) }
                 className="inputRole-admin"
               >
-                <option value="" disabled selected>Selecione um vendedor</option>
+                <option value="" disabled>Selecione um vendedor</option>
                 {sellers.map((user) => (
                   <option
                     key={ user.name }
                     value={ user.id }
                   >
-                    { user.name }
-                  </option>))}
+                    {user.name}
+                  </option>
+                ))}
               </select>
             </label>
             <label htmlFor="address">

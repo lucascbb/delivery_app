@@ -1,3 +1,15 @@
+.noProduct-sellerOrder {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.icon-sellerOrder {
+  font-size: 30px;
+  margin: 55px 0 15px;
+}
+
 @media ( min-width : 320px ) and ( max-width : 479px ) {
 
   .container-order-card {

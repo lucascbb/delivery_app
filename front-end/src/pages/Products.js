@@ -34,7 +34,6 @@ class Products extends React.Component {
       localStorage.setItem('shoppingCart', JSON.stringify(a));
       if (!a.length) {
         localStorage.setItem('shoppingCartValue', JSON.stringify(0.00));
-        const shoppingCartValue3 = localStorage.getItem('shoppingCartValue');
 
         if (entra) {
           this.setState({ shoppingCartValue: 0.00, entra: false });
