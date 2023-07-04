@@ -92,6 +92,9 @@ class SaleDetails extends React.Component {
 
   render() {
     const dataTest = 'seller_order_details__element-order-';
+    const userString = localStorage.getItem('user');
+    const { role } = JSON.parse(userString);
+    console.log(role);
     const { sale, status, disablePreparing, disableInTransit } = this.state;
     return (
       sale.products ? (
@@ -145,7 +148,10 @@ class SaleDetails extends React.Component {
                     type="button"
                     onClick={ this.checkPreparing }
                     className="prepareBtn"
-                    disabled={ disablePreparing }
+                    disabled={
+                      disablePreparing
+                      || role !== 'seller'
+                    }
                   >
                     Preparar pedido
                   </button>
@@ -154,7 +160,10 @@ class SaleDetails extends React.Component {
                     type="button"
                     onClick={ this.checkInTransit }
                     className="deliveryBtn"
-                    disabled={ disableInTransit }
+                    disabled={
+                      disableInTransit
+                      || role !== 'seller'
+                    }
                   >
                     Saiu para entrega
                   </button>

@@ -196,4 +196,5 @@ Orders.propTypes = {
     pathname: PropTypes.string,
   }).isRequired,
 };
+
 export default connect()(Orders);
