@@ -31,7 +31,7 @@ class CheckoutTable extends React.Component {
             <th>Descrição</th>
             <th>Quantidade</th>
             <th>Valor Unitário</th>
-            <th>Sub-total</th>
+            <th>Subtotal</th>
             <th>Remover Item</th>
           </tr>
         </thead>
@@ -74,7 +74,7 @@ class CheckoutTable extends React.Component {
                 data-testid={
                   `customer_checkout__element-order-table-sub-total-${index}`
                 }
-                data-label="Sub-total"
+                data-label="Subtotal"
               >
                 { (Number(item.price) * item.quantity)
                   .toFixed(2).replace('.', ',') }

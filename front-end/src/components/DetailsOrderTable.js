@@ -13,7 +13,7 @@ class DetailsOrderTable extends React.Component {
             <th>Descrição</th>
             <th>Quantidade</th>
             <th>Valor Unitário</th>
-            <th>Sub-total</th>
+            <th>Subtotal</th>
           </tr>
         </thead>
         <tbody>

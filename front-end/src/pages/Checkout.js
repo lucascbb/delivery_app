@@ -34,9 +34,6 @@ class Checkout extends React.Component {
     const { details } = this.state;
     const users = await requestGet('/user');
 
-    console.log(thisUser);
-    console.log(users.filter((e) => e.role === 'seller' && e.id !== thisUser.id));
-
     const userId = users.find((a) => (
       a.name === thisUser.name
     ));
@@ -106,97 +103,98 @@ class Checkout extends React.Component {
   render() {
     const { shoppingCartValue, shoppingCart, sellers, details } = this.state;
     return (
-      <div className="paiCheckout">
+      <>
         <NavBar />
-        <h1 className="title-checkout"> FINALIZAR PEDIDO </h1>
-        { shoppingCart.length > 0
-          ? (
-            <CheckoutTable
-              shoppingCart={ shoppingCart }
-              shoppingCartValue={ shoppingCartValue }
-              handleComponent={ this.handleComponent }
-            />
-          )
-          : <p> Você não possui produtos no carrinho  </p>}
-        <p className="price-checkout">
-          Total: R$
-          <span
-            data-testid="customer_checkout__element-order-total-price"
-          >
-            {(shoppingCartValue).toFixed(2).replace('.', ',')}
-          </span>
-        </p>
-        <form className="form-login">
-          <h2 className="title-register"> Detalhes e Endereço para Entrega </h2>
-          <div className="paiInputs-register">
-            <label htmlFor="seller">
-              <span className="labelName">Pessoa Vendedora</span>
-              <select
-                id="seller"
-                name="seller"
-                data-testid="customer_checkout__select-seller"
-                value={ details.sellerId }
-                onChange={ (e) => this.handleChange('sellerId', Number(e.target.value)) }
-                className="inputRole-admin"
-              >
-                <option value="" disabled>Selecione um vendedor</option>
-                {sellers.map((user) => (
-                  <option
-                    key={ user.name }
-                    value={ user.id }
-                  >
-                    {user.name}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label htmlFor="address">
-              <span className="labelName">Endereço</span>
-              <input
-                id="address"
-                name="address"
-                type="text"
-                value={ details.address }
-                onChange={ (e) => this.handleChange('address', e.target.value) }
-                data-testid="customer_checkout__input-address"
-                className="inputName-register"
+        <div className="paiCheckout">
+          <h1 className="title-checkout"> FINALIZAR PEDIDO </h1>
+          { shoppingCart.length > 0
+            ? (
+              <CheckoutTable
+                shoppingCart={ shoppingCart }
+                shoppingCartValue={ shoppingCartValue }
+                handleComponent={ this.handleComponent }
               />
-            </label>
-            <label
-              htmlFor="address-number"
+            )
+            : <p className="noProdu-checkout"> Você não possui produtos no carrinho  </p>}
+          <p className="price-checkout">
+            Total: R$
+            <span
+              data-testid="customer_checkout__element-order-total-price"
             >
-              <span className="labelName">Número</span>
-              <input
-                id="address-number"
-                name="address-number"
-                type="number"
-                placeholder="0"
-                value={ details.addressNumber }
-                onChange={ (e) => this.handleChange('addressNumber', e.target.value) }
-                data-testid="customer_checkout__input-address-number"
-                className="inputName-register"
-              />
-            </label>
-          </div>
-          <div className="btn-admin">
-            <button
-              type="button"
-              disabled={
-                details.address === ''
+              {(shoppingCartValue).toFixed(2).replace('.', ',')}
+            </span>
+          </p>
+          <form className="form-checkout">
+            <h2 className="title2-checkout"> Detalhes e Endereço para Entrega </h2>
+            <div className="inputs-Checkout">
+              <label htmlFor="seller">
+                <span>Pessoa Vendedora</span>
+                <select
+                  id="seller"
+                  name="seller"
+                  data-testid="customer_checkout__select-seller"
+                  value={ details.sellerId }
+                  onChange={ (e) => this.handleChange(
+                    'sellerId',
+                    Number(e.target.value),
+                  ) }
+                >
+                  <option value="" disabled>Selecione um vendedor</option>
+                  {sellers.map((user) => (
+                    <option
+                      key={ user.name }
+                      value={ user.id }
+                    >
+                      {user.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label htmlFor="address">
+                <span>Endereço</span>
+                <input
+                  id="address"
+                  name="address"
+                  type="text"
+                  value={ details.address }
+                  onChange={ (e) => this.handleChange('address', e.target.value) }
+                  data-testid="customer_checkout__input-address"
+                />
+              </label>
+              <label
+                htmlFor="address-number"
+              >
+                <span>Número</span>
+                <input
+                  id="address-number"
+                  name="address-number"
+                  type="number"
+                  placeholder="0"
+                  value={ details.addressNumber }
+                  onChange={ (e) => this.handleChange('addressNumber', e.target.value) }
+                  data-testid="customer_checkout__input-address-number"
+                />
+              </label>
+            </div>
+            <div className="btn-checkout">
+              <button
+                type="button"
+                disabled={
+                  details.address === ''
                 || details.addressNumber === ''
                 || details.sellerId === ''
                 || details.userId === ''
                 || shoppingCartValue === 0
-              }
-              data-testid="customer_checkout__button-submit-order"
-              onClick={ () => this.finish() }
-              className="buttonRegister-admin"
-            >
-              FINALIZAR PEDIDO
-            </button>
-          </div>
-        </form>
-      </div>
+                }
+                data-testid="customer_checkout__button-submit-order"
+                onClick={ () => this.finish() }
+              >
+                FINALIZAR PEDIDO
+              </button>
+            </div>
+          </form>
+        </div>
+      </>
     );
   }
 }
