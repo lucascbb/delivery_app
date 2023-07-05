@@ -32,7 +32,11 @@ Utilizei React para a criação da interface do usuário, Node.js com Express.js
 
 ## Demonstração
 
-
+<figure>
+  <img src="https://github.com/lucascbb/delivery_app/assets/108954192/6bb3d4af-869f-45df-a10d-1ef4fed4973e" alt="gif do projeto na versao de celular" width="270px">
+  <img src="https://github.com/lucascbb/delivery_app/assets/108954192/0e2ab8ca-7278-452a-9770-3ae2a72fe595" alt="gif do projeto na versao de tablet" width="400px">
+  <img src="https://github.com/lucascbb/delivery_app/assets/108954192/5e80b369-2f99-4de3-b737-714b3de3249e" alt="gif do projeto na versao de computador" width="500px">
+</figure>
 
 
 ## Instalação
