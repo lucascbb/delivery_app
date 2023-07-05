@@ -2,14 +2,19 @@
   "version": 2,
   "builds": [
     { 
-      "src": "back-end/src/api/server.js",
-      "use": "@vercel/node" 
+      "src": "docker-compose.yml",
+      "use": "docker-compose"
     }
   ],
   "routes": [
     {
-      "src": "(.*)",
+      "src": "/api/(.*)",
       "dest": "back-end/src/api/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "front-end/src/index.html"
     }
   ]
 }
+
